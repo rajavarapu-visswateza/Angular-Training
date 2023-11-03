@@ -1,0 +1,6 @@
+<div style="border: solid black 2px; padding: 5px; margin: 5px;">
+    <p>Dictionary API</p>
+    <input type="text" [(ngModel)]="word">
+    <button (click)="fetch()">Fetch</button>
+    <p *ngIf="isSuccess == true">Data: {{apiData|json}}</p>
+</div>

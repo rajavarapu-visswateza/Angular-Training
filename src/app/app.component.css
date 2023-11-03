@@ -1,0 +1,16 @@
+.task1{
+    background-color: aliceblue;
+    color: #000;
+    padding: 10px;
+    border: solid #000;
+    width: fit-content;
+}
+
+.task1 input{
+    background-color: antiquewhite;
+    color: blue;
+}
+
+.task1 p{
+    color: red;
+}

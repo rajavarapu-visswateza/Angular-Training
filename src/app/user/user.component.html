@@ -1,0 +1,11 @@
+<div style="border: solid black 2px; padding: 5px; margin: 5px;">
+<p>Parent Component</p>
+<ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul>
+
+<app-new-user 
+[item]="currentItem"
+(newItemEvent)="addItem($event)"
+></app-new-user>
+</div>
