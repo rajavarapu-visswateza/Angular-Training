@@ -1,0 +1,30 @@
+<div style="border: solid black 2px; padding: 5px; margin: 5px;">
+    <p>state management works!</p>
+    <!-- <label for="name">Name: </label>
+    <input id="name" type="text" [formControl]="name">
+    <br>
+    <p>Value: {{name.value}}</p>
+    <button type="button" (click)="updateName()">Update Name</button> -->
+
+    <form [formGroup]="calculatorForm" (ngSubmit)="onSubmit()">
+
+        <label for="first-value">First Value: </label>
+        <input id="first-value" type="number" formControlName="firstValue">
+        <br>
+      
+        <label for="last-value">Last Value: </label>
+        <input id="last-value" type="number" formControlName="lastValue">
+        <br>
+
+        <button type="submit" [disabled]="!calculatorForm.valid">Add</button>
+    </form>
+
+    <p>{{result}}</p>
+
+    <div *ngFor="let item of products">
+        <h2>{{ item.title }}</h2>
+        <p>Price: ${{ item.price }}</p>
+        <p>Category: {{ item.category }}</p>
+        <img [src]="item.image" alt="{{ item.title }}" width="100">
+      </div>
+</div>

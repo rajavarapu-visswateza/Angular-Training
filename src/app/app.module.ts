@@ -16,6 +16,10 @@ import { FacultyDetailsComponent } from './faculty-module/faculty-details/facult
 import { FacultyTableComponent } from './faculty-module/faculty-table/faculty-table.component';
 import { StudentDetailsComponent } from './student-module/student-details/student-details.component';
 import { StudentTableComponent } from './student-module/student-table/student-table.component';
+import { StateManagementComponent } from './state-management/state-management.component';
+import { StoreModule } from '@ngrx/store';
+import { addReducer } from './state-management/math.reducer';
+// import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { StudentTableComponent } from './student-module/student-table/student-ta
     FacultyDetailsComponent,
     FacultyTableComponent,
     StudentDetailsComponent,
-    StudentTableComponent
+    StudentTableComponent,
+    StateManagementComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,9 @@ import { StudentTableComponent } from './student-module/student-table/student-ta
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({'resultValue':addReducer}),
+    // EffectsModule.forRoot([ProductsEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

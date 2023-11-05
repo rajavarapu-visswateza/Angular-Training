@@ -18,9 +18,17 @@ export class ApiComponent {
 
     fetch():void{
       this.isSuccess = false;
-      this.apiService.getApiDetails(this.word).subscribe(data => {
-        this.isSuccess = true;
-        this.apiData = data;
-      })
+      this.apiService.getApiDetails().subscribe(
+        {
+          next: (response) => {
+            this.apiData = response;
+            this.isSuccess = true;
+          },
+          error: (error) => {
+            this.apiData = {"data":"No data found"};
+            this.isSuccess = true;
+          }
+        }
+      )
     }
 }

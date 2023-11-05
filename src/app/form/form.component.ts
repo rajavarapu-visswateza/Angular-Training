@@ -16,7 +16,7 @@ export class FormComponent {
 
   profileForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.minLength(4)),
+    lastName: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
   onSubmit(){
